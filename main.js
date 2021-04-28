@@ -58,6 +58,7 @@ function AssignVariables()
 function Reset()
 {
     updateButton.disabled = true
+    addButton.disabled = false;
     nameInput.value = "";
     ageInput.value = "";
     cityInput.value = "Lahore";
