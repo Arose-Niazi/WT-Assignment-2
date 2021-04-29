@@ -1,139 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 2 WT</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Assignment 2 WT</title>
 
-    <link rel="stylesheet" href="libs/bootsrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="main.css">
-    <script src="libs/bootsrap/js/bootstrap.bundle.min.js"></script>
-    <script src="main.js"></script>
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-8">
-                <h3>List of Persons</h3>
-                <table class="table table-light table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Gender</th>
-                            <th scope="col">Age</th>
-                            <th scope="col">City</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="Persons">
-                        <tr>
-                            <th scope="row">Rimsha</th>
-                            <td>Female</td>
-                            <td>21</td>
-                            <td>Lahore</td>
-                            <td><a href="#" onclick="Update(event)">Update</a> / <a href="#" onclick="Delete(event)">Delete</a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Arose</th>
-                            <td>Male</td>
-                            <td>21</td>
-                            <td>Mianwali</td>
-                            <td><a href="#" onclick="Update(event)">Update</a> / <a href="#" onclick="Delete(event)">Delete</a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Qasim</th>
-                            <td>Male</td>
-                            <td>22</td>
-                            <td>Bhalwal</td>
-                            <td><a href="#" onclick="Update(event)">Update</a> / <a href="#" onclick="Delete(event)">Delete</a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Fuad</th>
-                            <td>Male</td>
-                            <td>21</td>
-                            <td>Lahore</td>
-                            <td><a href="#" onclick="Update(event)">Update</a> / <a href="#" onclick="Delete(event)">Delete</a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aeman</th>
-                            <td>Female</td>
-                            <td>20</td>
-                            <td>Lahore</td>
-                            <td><a href="#" onclick="Update(event)">Update</a> / <a href="#" onclick="Delete(event)">Delete</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-4">
-                <fieldset>
-                    <legend>Add / Update Person Forms</legend> 
-                    <table>
-                        <tbody>
+        <link rel="stylesheet" href="libs/bootsrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="main.css" />
+        <script src="libs/bootsrap/js/bootstrap.bundle.min.js"></script>
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <h3>List of Persons</h3>
+                    <table class="table table-light table-striped">
+                        <thead>
                             <tr>
-                                <td><label for="name">Name:</label></td>
-                                <td colspan="2">
-                                    <input 
-                                        type="text" 
-                                        class="form-control" 
-                                        id="Name" 
-                                        maxlength="10" 
-                                        title="Please use alphabets only. &#013;Maximum length: 10&#013;Minimum Length: 1"
-                                        required
+                                <th scope="col">Name</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Age</th>
+                                <th scope="col">City</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="Persons">
+                            <tr>
+                                <th scope="row">Rimsha</th>
+                                <td>Female</td>
+                                <td>21</td>
+                                <td>Lahore</td>
+                                <td>
+                                    <a href="#" onclick="Update(event)"
+                                        >Update</a
+                                    >
+                                    /
+                                    <a href="#" onclick="Delete(event)"
+                                        >Delete</a
                                     >
                                 </td>
                             </tr>
                             <tr>
-                                <fieldset id="Gender">
-                                    <td><label>Gender:</label></td>
-                                    <td>
-                                        <input class="form-check-input" type="radio" value="Male" name="Gender" id="Male" checked>
-                                        <label class="form-check-label" for="Male">Male</label>
-                                    </td>
-                                    <td>
-                                        <input class="form-check-input" type="radio" value="Female" name="Gender" id="Female">
-                                        <label class="form-check-label" for="Female">Female</label>
-                                    </td>
-                                </fieldset>
-                            </tr>
-                            <tr>
-                                <td><label for="name">Age:</label></td>
-                                <td colspan="2">
-                                    <input 
-                                        type="number" 
-                                        class="form-control" 
-                                        id="Age" 
-                                        min="10" max="50" 
-                                        required
-                                    />
+                                <th scope="row">Arose</th>
+                                <td>Male</td>
+                                <td>21</td>
+                                <td>Mianwali</td>
+                                <td>
+                                    <a href="#" onclick="Update(event)"
+                                        >Update</a
+                                    >
+                                    /
+                                    <a href="#" onclick="Delete(event)"
+                                        >Delete</a
+                                    >
                                 </td>
                             </tr>
                             <tr>
-                                <td><label for="name">City:</label></td>
-                                <td colspan="2">
-                                    <input class="form-select" type="text" list="cities-list" id="City"/>
-                                    <datalist id='cities-list'>
-                                        <option>Lahore</option>
-                                        <option>Islamabad</option>
-                                        <option>Karachi</option>
-                                        <option>Faislabad</option>
-                                        <option>Mianwali</option>
-                                        <option>Sargodha</option>
-                                        <option>Bhalwal</option>
-                                    </datalist>
+                                <th scope="row">Qasim</th>
+                                <td>Male</td>
+                                <td>22</td>
+                                <td>Bhalwal</td>
+                                <td>
+                                    <a href="#" onclick="Update(event)"
+                                        >Update</a
+                                    >
+                                    /
+                                    <a href="#" onclick="Delete(event)"
+                                        >Delete</a
+                                    >
                                 </td>
                             </tr>
                             <tr>
-                                <td><button type="button" class="btn btn-outline-dark" style="width: 100%;" id="Reset">Reset</button></td>
-                                <td><button type="button" class="btn btn-outline-primary" style="width: 100%;" id="Add">Add</button></td>
-                                <td><button type="button" class="btn btn-outline-primary" style="width: 100%;" id="Update">Update</button></td>
+                                <th scope="row">Fuad</th>
+                                <td>Male</td>
+                                <td>21</td>
+                                <td>Lahore</td>
+                                <td>
+                                    <a href="#" onclick="Update(event)"
+                                        >Update</a
+                                    >
+                                    /
+                                    <a href="#" onclick="Delete(event)"
+                                        >Delete</a
+                                    >
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Aeman</th>
+                                <td>Female</td>
+                                <td>20</td>
+                                <td>Lahore</td>
+                                <td>
+                                    <a href="#" onclick="Update(event)"
+                                        >Update</a
+                                    >
+                                    /
+                                    <a href="#" onclick="Delete(event)"
+                                        >Delete</a
+                                    >
+                                </td>
                             </tr>
                         </tbody>
                     </table>
-                </fieldset>
+                </div>
+                <div class="col-4">
+                    <fieldset>
+                        <legend>Add / Update Person Forms</legend>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><label for="name">Name:</label></td>
+                                    <td colspan="2">
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="Name"
+                                            maxlength="10"
+                                            title="Please use alphabets only. &#013;Maximum length: 10&#013;Minimum Length: 1"
+                                            required
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <fieldset id="Gender">
+                                        <td><label>Gender:</label></td>
+                                        <td>
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                value="Male"
+                                                name="Gender"
+                                                id="Male"
+                                                checked
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="Male"
+                                                >Male</label
+                                            >
+                                        </td>
+                                        <td>
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                value="Female"
+                                                name="Gender"
+                                                id="Female"
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="Female"
+                                                >Female</label
+                                            >
+                                        </td>
+                                    </fieldset>
+                                </tr>
+                                <tr>
+                                    <td><label for="name">Age:</label></td>
+                                    <td colspan="2">
+                                        <input
+                                            type="number"
+                                            class="form-control"
+                                            id="Age"
+                                            min="10"
+                                            max="50"
+                                            required
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="name">City:</label></td>
+                                    <td colspan="2">
+                                        <input
+                                            class="form-select"
+                                            type="text"
+                                            list="cities-list"
+                                            id="City"
+                                        />
+                                        <datalist id="cities-list">
+                                            <option>Lahore</option>
+                                            <option>Islamabad</option>
+                                            <option>Karachi</option>
+                                            <option>Faislabad</option>
+                                            <option>Mianwali</option>
+                                            <option>Sargodha</option>
+                                            <option>Bhalwal</option>
+                                        </datalist>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button
+                                            type="button"
+                                            class="btn btn-outline-dark"
+                                            style="width: 100%"
+                                            id="Reset"
+                                        >
+                                            Reset
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button
+                                            type="button"
+                                            class="btn btn-outline-primary"
+                                            style="width: 100%"
+                                            id="Add"
+                                        >
+                                            Add
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button
+                                            type="button"
+                                            class="btn btn-outline-primary"
+                                            style="width: 100%"
+                                            id="Update"
+                                        >
+                                            Update
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </fieldset>
+                </div>
             </div>
         </div>
-    </div>
-
-</body>
+    </body>
 </html>
