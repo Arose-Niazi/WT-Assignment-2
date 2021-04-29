@@ -114,47 +114,16 @@ function Add()
 {
     if(!IsValidInput()) return; 
 
-    var tableRow = document.createElement("tr");
+    var gender = (maleInput.checked)?"Male":"Female";
 
-    var nameTH = document.createElement("th")
-    nameTH.setAttribute("scope", "row");
-    nameTH.innerText = nameInput.value;
-
-    var genderTD = document.createElement("td");
-    if(maleInput.checked)
-        genderTD.innerText = "Male";
-    else
-        genderTD.innerText = "Female";
-
-    var ageTD = document.createElement("td");
-    ageTD.innerText = ageInput.value;
-
-    var cityTD = document.createElement("td");
-    cityTD.innerText = cityInput.value;
-
-    var buttonsTD = document.createElement("td");
-    var updateA = document.createElement("a");
-    updateA.setAttribute("href", "#");
-    updateA.setAttribute("onclick", "Update(event)");
-    updateA.innerText = "Update";
-
-    var buttonGapText = document.createTextNode(" / ");
-
-    var deleteA = document.createElement("a");
-    deleteA.setAttribute("href", "#");
-    deleteA.setAttribute("onclick", "Delete(event)");
-    deleteA.innerText = "Delete";
-
-    buttonsTD.appendChild(updateA);
-    buttonsTD.appendChild(buttonGapText);
-    buttonsTD.appendChild(deleteA);
-
-    tableRow.appendChild(nameTH);
-    tableRow.appendChild(genderTD);
-    tableRow.appendChild(ageTD);
-    tableRow.appendChild(cityTD);
-    tableRow.appendChild(buttonsTD);
-    tableBody.appendChild(tableRow);
+    tableBody.innerHTML += 
+    '<tr>'+
+        '<th scope="row">'+nameInput.value+'</th>'+
+        '<td>'+gender+'</td>'+
+        '<td>'+ageInput.value+'</td>'+
+        '<td>'+cityInput.value+'</td>'+
+        '<td><a href="#" onclick="Update(event)">Update</a> / <a href="#" onclick="Delete(event)">Delete</a></td>'+
+    '</tr>';
 }
 
 function IsValidInput() {
