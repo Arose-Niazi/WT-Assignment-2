@@ -66,68 +66,71 @@
                 </table>
             </div>
             <div class="col-4">
-                <h3>Add / Update Person Forms</h3> 
-                <table>
-                    <tbody>
-                        <tr>
-                            <td><label for="name">Name:</label></td>
-                            <td colspan="2">
-                                <input 
-                                    type="text" 
-                                    class="form-control" 
-                                    id="Name" 
-                                    maxlength="10" 
-                                    title="Please use alphabets only. &#013;Maximum length: 10&#013;Minimum Length: 1"
-                                    required
-                                >
-                            </td>
-                        </tr>
-                        <tr>
-                            <fieldset id="Gender">
-                                <td><label>Gender:</label></td>
-                                <td>
-                                    <input class="form-check-input" type="radio" value="Male" name="Gender" id="Male" checked>
-                                    <label class="form-check-label" for="Male">Male</label>
+                <fieldset>
+                    <legend>Add / Update Person Forms</legend> 
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><label for="name">Name:</label></td>
+                                <td colspan="2">
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        id="Name" 
+                                        maxlength="10" 
+                                        title="Please use alphabets only. &#013;Maximum length: 10&#013;Minimum Length: 1"
+                                        required
+                                    >
                                 </td>
-                                <td>
-                                    <input class="form-check-input" type="radio" value="Female" name="Gender" id="Female">
-                                    <label class="form-check-label" for="Female">Female</label>
+                            </tr>
+                            <tr>
+                                <fieldset id="Gender">
+                                    <td><label>Gender:</label></td>
+                                    <td>
+                                        <input class="form-check-input" type="radio" value="Male" name="Gender" id="Male" checked>
+                                        <label class="form-check-label" for="Male">Male</label>
+                                    </td>
+                                    <td>
+                                        <input class="form-check-input" type="radio" value="Female" name="Gender" id="Female">
+                                        <label class="form-check-label" for="Female">Female</label>
+                                    </td>
+                                </fieldset>
+                            </tr>
+                            <tr>
+                                <td><label for="name">Age:</label></td>
+                                <td colspan="2">
+                                    <input 
+                                        type="number" 
+                                        class="form-control" 
+                                        id="Age" 
+                                        min="10" max="50" 
+                                        required
+                                    />
                                 </td>
-                            </fieldset>
-                        </tr>
-                        <tr>
-                            <td><label for="name">Age:</label></td>
-                            <td colspan="2">
-                                <input 
-                                    type="number" 
-                                    class="form-control" 
-                                    id="Age" 
-                                    min="10" max="50" 
-                                    required
-                                >
+                            </tr>
+                            <tr>
+                                <td><label for="name">City:</label></td>
+                                <td colspan="2">
+                                    <input class="form-select" type="text" list="cities-list" id="City"/>
+                                    <datalist id='cities-list'>
+                                        <option>Lahore</option>
+                                        <option>Islamabad</option>
+                                        <option>Karachi</option>
+                                        <option>Faislabad</option>
+                                        <option>Mianwali</option>
+                                        <option>Sargodha</option>
+                                        <option>Bhalwal</option>
+                                    </datalist>
                                 </td>
-                        </tr>
-                        <tr>
-                            <td><label for="name">City:</label></td>
-                            <td colspan="2">
-                                <select class="form-select" aria-label="Default select example" id="City">
-                                    <option selected>Lahore</option>
-                                    <option>Islamabad</option>
-                                    <option>Karachi</option>
-                                    <option>Faislabad</option>
-                                    <option>Mianwali</option>
-                                    <option>Sargodha</option>
-                                    <option>Bhalwal</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><button type="button" class="btn btn-outline-dark" style="width: 100%;" id="Reset">Reset</button></td>
-                            <td><button type="button" class="btn btn-outline-primary" style="width: 100%;" id="Add">Add</button></td>
-                            <td><button type="button" class="btn btn-outline-primary" style="width: 100%;" id="Update">Update</button></td>
-                        </tr>
-                    </tbody>
-                </table>
+                            </tr>
+                            <tr>
+                                <td><button type="button" class="btn btn-outline-dark" style="width: 100%;" id="Reset">Reset</button></td>
+                                <td><button type="button" class="btn btn-outline-primary" style="width: 100%;" id="Add">Add</button></td>
+                                <td><button type="button" class="btn btn-outline-primary" style="width: 100%;" id="Update">Update</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-// Constants
+// Constants Using to remember what is stored where in an array.
 const NAME = 0;
 const GENDER = 1;
 const AGE = 2;
@@ -7,7 +7,7 @@ const CITY = 3;
 
 var CanDelete = true;
 var CurrentEditing;
-var NamePattern = new RegExp("(^[A-Za-z]{1,10})+$");
+var NamePattern = new RegExp("(^[A-Za-z]{1,10})+$");//Only allow Alphabets with size between 1 to 10. 
 
 // Buttons
 var updateButton;
@@ -51,56 +51,66 @@ function AssignVariables()
     femaleInput = document.getElementById("Female");
     cityInput = document.getElementById("City");
 
+    //Table Body where we will insert data. 
     tableBody = document.getElementById("Persons");
 
 }
 
 function Reset()
 {
-    updateButton.disabled = true
-    addButton.disabled = false;
+
+    updateButton.disabled = true //This will diable the update button
+    addButton.disabled = false; //This will enable the add button
+
+    //Resetting the values in form to a default value.
     nameInput.value = "";
     ageInput.value = "";
     cityInput.value = "Lahore";
+
+    //To check if we can use the delete button.
     CanDelete = true;
 }
 
 function Update(e)
 {
-    var currentRow = e.target.parentNode.parentNode;
-    CurrentEditing = [];
+    var currentRow = e.target.parentNode.parentNode; //Getting parent of 'a' -> 'td' -> 'tr' So we got the row
+    CurrentEditing = []; //Stores the childs 'td' we need 
 
-    for (let index = 0; index < currentRow.childNodes.length; index++) {
-        const element = currentRow.childNodes[index];
-        if(element.tagName == undefined) continue;
-        CurrentEditing.push(element)
+    for (let index = 0; index < currentRow.childNodes.length; index++) { //Loop through all childs of currentRow
+        const element = currentRow.childNodes[index]; //Getting the child.
+        if(element.tagName == undefined) continue; //If that element is undefined that means, it's extra we don't need it.
+        CurrentEditing.push(element) //Add the childs in currrent Editng list. 
     }
 
+    //Updating the form with the values
     nameInput.value = CurrentEditing[NAME].innerText; 
     ageInput.value = CurrentEditing[AGE].innerText; 
     cityInput.value = CurrentEditing[CITY].innerText; 
 
+    //Gender checking
     if(CurrentEditing[GENDER].innerText === "Male")
-        maleInput.checked = true;  
+        maleInput.checked = true;  //Check the male radio button
     else
-        femaleInput.checked = true;
+        femaleInput.checked = true; //Check the female radio button
 
-    addButton.disabled = true;
-    updateButton.disabled = false;
+    addButton.disabled = true; //Now adding new value is disabled. 
+    updateButton.disabled = false; //Enable the update button. 
 
-    CanDelete = false;
+    CanDelete = false; //As we are editing a value, can not delete anymore. 
 }
 
 function Delete(e)
 {
-    if(!CanDelete) return;
-    e.target.parentNode.parentNode.remove();
+    if(!CanDelete) return; 
+    e.target.parentNode.parentNode.remove(); //Getting parent of 'a' -> 'td' -> 'tr' So we got the row and remove() will delete it. 
 }
 
 function UpdateValues()
 {
+    //Input validation 
     if(!IsValidInput()) return; 
 
+    //Updating the values in table. 
     CurrentEditing[NAME].innerText = nameInput.value;
     CurrentEditing[AGE].innerText = ageInput.value;
     CurrentEditing[CITY].innerText = cityInput.value;
@@ -112,10 +122,13 @@ function UpdateValues()
 
 function Add()
 {
+    //Input validation 
     if(!IsValidInput()) return; 
 
+    //If male radio button is checked then male else female.
     var gender = (maleInput.checked)?"Male":"Female";
 
+    //Adding new row to table body 
     tableBody.innerHTML += 
     '<tr>'+
         '<th scope="row">'+nameInput.value+'</th>'+
@@ -124,9 +137,13 @@ function Add()
         '<td>'+cityInput.value+'</td>'+
         '<td><a href="#" onclick="Update(event)">Update</a> / <a href="#" onclick="Delete(event)">Delete</a></td>'+
     '</tr>';
+
+    //Reseting the form. 
+    Reset();
 }
 
 function IsValidInput() {
+    //Matches name with regex pattern
     if(!NamePattern.test(nameInput.value))
     {
         alert("Incorrect Name:\n\tPlease use alphabets only.\n\tMinimum length: 1\n\tMaximum Length: 1");
