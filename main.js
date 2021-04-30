@@ -57,7 +57,7 @@ function Reset() {
     //Resetting the values in form to a default value.
     nameInput.value = "";
     ageInput.value = "";
-    cityInput.value = "Lahore";
+    cityInput.value = "";
 
     //To check if we can use the delete button.
     CanDelete = true;
