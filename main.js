@@ -117,9 +117,9 @@ function Add() {
     //Adding new row to table body
     tableBody.innerHTML +=
         "<tr>" +
-        '<th scope="row">' +
+        '<td scope="row">' +
         nameInput.value +
-        "</th>" +
+        "</td>" +
         "<td>" +
         gender +
         "</td>" +
