@@ -150,5 +150,10 @@ function IsValidInput() {
         return false;
     }
 
+    if (!cityInput.value) {
+        alert("Incorrect City:\n\tPlease enter a city name, or select from list.");
+        return false;
+    }
+
     return true;
 }
