@@ -58,6 +58,7 @@ function Reset() {
     nameInput.value = "";
     ageInput.value = "";
     cityInput.value = "";
+    maleInput.checked = true;
 
     //To check if we can use the delete button.
     CanDelete = true;
