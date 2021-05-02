@@ -2,6 +2,7 @@ body{
     background-color: rgb(17, 15, 15);
     background-image: linear-gradient(rgba(0, 0, 0, 0.808),rgba(0, 0, 0, 0.795)) , url(background.png);
     width: 100%;
+    overflow-x:hidden;
 }
 
 
@@ -52,6 +53,7 @@ body::-webkit-scrollbar {
     font-size: 0.9em;
     border-radius: 1px;
     transition: 0.3s;
+    margin-top: 10px;
 }
 .btn:not([enabled]):hover{
     background-color: white;
@@ -160,4 +162,38 @@ a:hover{
     color: rgb(28,177,135);
     cursor: pointer;
     transition: 0.2s;
+}
+@media(max-width: 945px) {
+    .container{
+        margin-right: 0;
+        margin-left: 0;
+        max-width: 99%;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .divl,.divr{
+        width: 99%;
+        padding: 30px;
+        margin: 0;
+    }
+    body{
+        padding: 0;
+        margin: 0;
+    }
+    .row>*{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+ 
+}
+
+@media(min-width: 768px) {
+    .divl,.divr{
+        width: 110%;
+        height: 100%;
+    }
+    .btn:not([enabled]){
+        width: 110%;
+        padding: 0.8px 0em;
+    }
 }
