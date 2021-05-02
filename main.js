@@ -141,7 +141,7 @@ function IsValidInput() {
     //Matches name with regex pattern
     if (!NamePattern.test(nameInput.value)) {
         alert(
-            "Incorrect Name:\n\tPlease use alphabets only.\n\tMinimum length: 1\n\tMaximum Length: 1"
+            "Incorrect Name:\n\tPlease use alphabets only.\n\tMinimum length: 1\n\tMaximum Length: 10"
         );
         return false;
     }
