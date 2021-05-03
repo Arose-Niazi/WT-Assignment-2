@@ -92,7 +92,12 @@ function Update(e) {
 }
 
 function Delete(e) {
-    if (!CanDelete) return;
+    if (!CanDelete) {
+        alert(
+            "You can not delete the value you are editing. Please press reset and then delete it."
+        );
+        return;
+    }
     e.target.parentNode.parentNode.remove(); //Getting parent of 'a' -> 'td' -> 'tr' So we got the row and remove() will delete it.
 }
 
@@ -152,7 +157,9 @@ function IsValidInput() {
     }
 
     if (!cityInput.value) {
-        alert("Incorrect City:\n\tPlease enter a city name, or select from list.");
+        alert(
+            "Incorrect City:\n\tPlease enter a city name, or select from list."
+        );
         return false;
     }
 
